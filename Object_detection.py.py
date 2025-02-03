@@ -2,19 +2,6 @@ import cv2 #opencv
 import urllib.request #to open and read URL
 import numpy as np
 
-#OBJECT CLASSIFICATION PROGRAM FOR VIDEO IN IP ADDRESS
-
-url = 'http://192.168.1.6/cam-hi.jpg'
-#url = 'http://192.168.1.6/'
-winName = 'ESP32 CAMERA'
-cv2.namedWindow(winName,cv2.WINDOW_AUTOSIZE)
-#scale_percent = 80 # percent of original size    #for image processing
-
-classNames = []
-classFile = 'coco.names'
-with open(classFile,'rt') as f:
-    classNames = f.read().rstrip('\n').split('\n')
-
 configPath = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
 weightsPath = 'frozen_inference_graph.pb'
 
